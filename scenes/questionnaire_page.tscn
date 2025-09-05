@@ -1,0 +1,198 @@
+[gd_scene load_steps=10 format=3 uid="uid://dp6ddqiik45gu"]
+
+[ext_resource type="Texture2D" uid="uid://p2b5ilox6r6r" path="res://assets/placeholder_texture.PNG" id="1_0mdi4"]
+[ext_resource type="FontFile" uid="uid://dcyn5sfqdlt0r" path="res://assets/fonts/Antonio-Bold.ttf" id="2_l3dve"]
+[ext_resource type="PackedScene" uid="uid://bkmjqrgwh0a8i" path="res://scenes/choice_button.tscn" id="3_l3dve"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fvcjy"]
+atlas = ExtResource("1_0mdi4")
+region = Rect2(0, 344, 2048, 1384)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fvcjy"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hqfip"]
+bg_color = Color(0.960351, 0.960351, 0.960351, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+corner_detail = 10
+shadow_color = Color(0, 0, 0, 0.0980392)
+shadow_size = 1
+shadow_offset = Vector2(0, 4)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ptsiu"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+corner_detail = 10
+shadow_color = Color(0, 0, 0, 0.0980392)
+shadow_size = 1
+shadow_offset = Vector2(0, 4)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fvcjy"]
+bg_color = Color(0.881937, 0.881937, 0.881937, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+corner_detail = 10
+
+[sub_resource type="Theme" id="Theme_hqfip"]
+Button/colors/font_color = Color(0.314316, 0.314316, 0.314316, 1)
+Button/colors/font_focus_color = Color(0.313726, 0.313726, 0.313726, 1)
+Button/colors/font_hover_color = Color(0.313726, 0.313726, 0.313726, 1)
+Button/colors/font_hover_pressed_color = Color(0.313726, 0.313726, 0.313726, 1)
+Button/colors/font_pressed_color = Color(0.313726, 0.313726, 0.313726, 1)
+Button/font_sizes/font_size = 24
+Button/fonts/font = ExtResource("2_l3dve")
+Button/styles/focus = SubResource("StyleBoxEmpty_fvcjy")
+Button/styles/hover = SubResource("StyleBoxFlat_hqfip")
+Button/styles/normal = SubResource("StyleBoxFlat_ptsiu")
+Button/styles/pressed = SubResource("StyleBoxFlat_fvcjy")
+
+[node name="QuestionnairePage" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Background" type="ColorRect" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.921569, 0.921569, 0.921569, 1)
+
+[node name="HeaderSh" type="ColorRect" parent="CanvasLayer"]
+offset_top = 8.0
+offset_right = 720.0
+offset_bottom = 128.0
+color = Color(1, 0.67451, 0.0117647, 0.313726)
+
+[node name="Header" type="ColorRect" parent="CanvasLayer"]
+offset_right = 720.0
+offset_bottom = 120.0
+color = Color(1, 0.67451, 0.0117647, 1)
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
+anchors_preset = -1
+anchor_left = 0.122222
+anchor_top = 0.1125
+anchor_right = 0.877778
+anchor_bottom = 0.4
+grow_horizontal = 2
+texture = SubResource("AtlasTexture_fvcjy")
+expand_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="NavigationButtonContainer" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchor_left = 0.0333333
+anchor_top = 0.01875
+anchor_right = 0.3
+anchor_bottom = 0.08125
+offset_left = 496.0
+offset_right = 496.0
+grow_horizontal = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="PrevButton" type="Button" parent="CanvasLayer/NavigationButtonContainer"]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.166667
+anchor_top = 0.0909091
+anchor_right = 0.479167
+anchor_bottom = 0.840909
+offset_bottom = -5.0
+theme = SubResource("Theme_hqfip")
+text = "←
+"
+autowrap_mode = 3
+metadata/_edit_use_anchors_ = true
+
+[node name="NextButton" type="Button" parent="CanvasLayer/NavigationButtonContainer"]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.541667
+anchor_top = 0.0909091
+anchor_right = 0.854167
+anchor_bottom = 0.840909
+offset_bottom = -5.0
+theme = SubResource("Theme_hqfip")
+text = "→
+"
+autowrap_mode = 3
+metadata/_edit_use_anchors_ = true
+
+[node name="QuestionnaireUI" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 40.0
+offset_top = 624.0
+offset_right = 80.0
+offset_bottom = 664.0
+
+[node name="QuestionContentLabel" type="RichTextLabel" parent="CanvasLayer/QuestionnaireUI"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_top = -140.0
+offset_right = 620.0
+offset_bottom = -56.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("2_l3dve")
+theme_override_font_sizes/normal_font_size = 30
+text = "[ PLACEHOLDER TEXT : PLEASE PUT THE QUESTION HERE ]
+[ PLACEHOLDER TEXT : PLEASE PUT THE QUESTION HERE ]"
+fit_content = true
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="ChoiceButtonContainer" type="Control" parent="CanvasLayer/QuestionnaireUI"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_top = -40.0
+offset_right = 620.0
+offset_bottom = 616.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="ChoiceButton" parent="CanvasLayer/QuestionnaireUI/ChoiceButtonContainer" instance=ExtResource("3_l3dve")]
+layout_mode = 0
+
+[node name="ChoiceButton2" parent="CanvasLayer/QuestionnaireUI/ChoiceButtonContainer" instance=ExtResource("3_l3dve")]
+layout_mode = 0
+offset_top = 160.0
+offset_bottom = 300.0
+
+[node name="ChoiceButton3" parent="CanvasLayer/QuestionnaireUI/ChoiceButtonContainer" instance=ExtResource("3_l3dve")]
+layout_mode = 0
+offset_top = 320.0
+offset_bottom = 460.0
+
+[node name="ChoiceButton4" parent="CanvasLayer/QuestionnaireUI/ChoiceButtonContainer" instance=ExtResource("3_l3dve")]
+layout_mode = 0
+offset_top = 480.0
+offset_bottom = 620.0

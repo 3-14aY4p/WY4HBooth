@@ -1,0 +1,1 @@
+class_name ChoiceData extends Resource
