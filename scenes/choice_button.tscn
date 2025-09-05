@@ -51,7 +51,6 @@ Button/styles/pressed = SubResource("StyleBoxFlat_fvcjy")
 
 [sub_resource type="Resource" id="Resource_1ioyl"]
 script = ExtResource("3_1ioyl")
-choice_ID = 0
 choice_txt = ""
 pts_hacker = 0
 pts_hipster = 0

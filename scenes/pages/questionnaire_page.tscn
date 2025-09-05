@@ -1,9 +1,57 @@
-[gd_scene load_steps=11 format=3 uid="uid://dp6ddqiik45gu"]
+[gd_scene load_steps=18 format=3 uid="uid://dp6ddqiik45gu"]
 
 [ext_resource type="Script" uid="uid://6butiporigej" path="res://scripts/questionnaire_page.gd" id="1_thmol"]
+[ext_resource type="Script" uid="uid://dr4ixy1erjnbg" path="res://scripts/custom resource/question_data.gd" id="2_ls8mo"]
 [ext_resource type="Texture2D" uid="uid://p2b5ilox6r6r" path="res://assets/4H/HIPSTER_crying.PNG" id="2_ytqnx"]
 [ext_resource type="FontFile" uid="uid://dcyn5sfqdlt0r" path="res://assets/fonts/Antonio-Bold.ttf" id="3_ls8mo"]
 [ext_resource type="PackedScene" uid="uid://bkmjqrgwh0a8i" path="res://scenes/choice_button.tscn" id="4_o4i7y"]
+[ext_resource type="Script" uid="uid://bj3twdugny0h0" path="res://scripts/custom resource/choice_data.gd" id="5_ytqnx"]
+
+[sub_resource type="Resource" id="Resource_ls8mo"]
+script = ExtResource("5_ytqnx")
+choice_txt = "Pitching the idea"
+pts_hacker = 0
+pts_hipster = 0
+pts_hustler = 2
+pts_hound = 1
+metadata/_custom_type_script = "uid://bj3twdugny0h0"
+
+[sub_resource type="Resource" id="Resource_8hnyy"]
+script = ExtResource("5_ytqnx")
+choice_txt = "Building the solution"
+pts_hacker = 2
+pts_hipster = 0
+pts_hustler = 0
+pts_hound = 1
+metadata/_custom_type_script = "uid://bj3twdugny0h0"
+
+[sub_resource type="Resource" id="Resource_j32ht"]
+script = ExtResource("5_ytqnx")
+choice_txt = "Making it look and feel right"
+pts_hacker = 0
+pts_hipster = 2
+pts_hustler = 0
+pts_hound = 1
+metadata/_custom_type_script = "uid://bj3twdugny0h0"
+
+[sub_resource type="Resource" id="Resource_r1obi"]
+script = ExtResource("5_ytqnx")
+choice_txt = "Researching and fact-checking"
+pts_hacker = 1
+pts_hipster = 0
+pts_hustler = 0
+pts_hound = 2
+metadata/_custom_type_script = "uid://bj3twdugny0h0"
+
+[sub_resource type="Resource" id="Resource_o4i7y"]
+script = ExtResource("2_ls8mo")
+question_ID = 0
+question_txt = "What do you enjoy most in a project?"
+choice_1 = SubResource("Resource_ls8mo")
+choice_2 = SubResource("Resource_8hnyy")
+choice_3 = SubResource("Resource_j32ht")
+choice_4 = SubResource("Resource_r1obi")
+metadata/_custom_type_script = "uid://dr4ixy1erjnbg"
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fvcjy"]
 atlas = ExtResource("2_ytqnx")
@@ -62,6 +110,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_thmol")
+question_data = SubResource("Resource_o4i7y")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
