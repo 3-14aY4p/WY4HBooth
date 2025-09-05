@@ -1,12 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://dp6ddqiik45gu"]
+[gd_scene load_steps=11 format=3 uid="uid://dp6ddqiik45gu"]
 
 [ext_resource type="Texture2D" uid="uid://p2b5ilox6r6r" path="res://assets/placeholder_texture.PNG" id="1_0mdi4"]
+[ext_resource type="Script" uid="uid://6butiporigej" path="res://scripts/questionnaire_page.gd" id="1_k6wl8"]
 [ext_resource type="FontFile" uid="uid://dcyn5sfqdlt0r" path="res://assets/fonts/Antonio-Bold.ttf" id="2_l3dve"]
 [ext_resource type="PackedScene" uid="uid://bkmjqrgwh0a8i" path="res://scenes/choice_button.tscn" id="3_l3dve"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_fvcjy"]
-atlas = ExtResource("1_0mdi4")
-region = Rect2(0, 344, 2048, 1384)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fvcjy"]
 
@@ -53,6 +50,10 @@ Button/styles/hover = SubResource("StyleBoxFlat_hqfip")
 Button/styles/normal = SubResource("StyleBoxFlat_ptsiu")
 Button/styles/pressed = SubResource("StyleBoxFlat_fvcjy")
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_fvcjy"]
+atlas = ExtResource("1_0mdi4")
+region = Rect2(0, 344, 2048, 1384)
+
 [node name="QuestionnairePage" type="Control"]
 layout_mode = 3
 anchors_preset = 15
@@ -60,6 +61,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_k6wl8")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -71,27 +73,26 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.921569, 0.921569, 0.921569, 1)
 
-[node name="HeaderSh" type="ColorRect" parent="CanvasLayer"]
+[node name="HeaderContainer" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HeaderSh" type="ColorRect" parent="CanvasLayer/HeaderContainer"]
+layout_mode = 0
 offset_top = 8.0
 offset_right = 720.0
 offset_bottom = 128.0
 color = Color(1, 0.67451, 0.0117647, 0.313726)
 
-[node name="Header" type="ColorRect" parent="CanvasLayer"]
+[node name="Header" type="ColorRect" parent="CanvasLayer/HeaderContainer"]
+layout_mode = 0
 offset_right = 720.0
 offset_bottom = 120.0
 color = Color(1, 0.67451, 0.0117647, 1)
-
-[node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
-anchors_preset = -1
-anchor_left = 0.122222
-anchor_top = 0.1125
-anchor_right = 0.877778
-anchor_bottom = 0.4
-grow_horizontal = 2
-texture = SubResource("AtlasTexture_fvcjy")
-expand_mode = 1
-metadata/_edit_use_anchors_ = true
 
 [node name="NavigationButtonContainer" type="Control" parent="CanvasLayer"]
 layout_mode = 3
@@ -102,6 +103,19 @@ anchor_bottom = 0.08125
 offset_left = 496.0
 offset_right = 496.0
 grow_horizontal = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="ExitButton" type="Button" parent="CanvasLayer/NavigationButtonContainer"]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -2.5
+anchor_top = 0.0875
+anchor_right = -2.1875
+anchor_bottom = 0.8375
+theme = SubResource("Theme_hqfip")
+text = "🗙"
+autowrap_mode = 3
 metadata/_edit_use_anchors_ = true
 
 [node name="PrevButton" type="Button" parent="CanvasLayer/NavigationButtonContainer"]
@@ -136,11 +150,24 @@ metadata/_edit_use_anchors_ = true
 
 [node name="QuestionnaireUI" type="Control" parent="CanvasLayer"]
 layout_mode = 3
-anchors_preset = 0
-offset_left = 40.0
-offset_top = 624.0
-offset_right = 80.0
-offset_bottom = 664.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="QuestionnaireImage" type="TextureRect" parent="CanvasLayer/QuestionnaireUI"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.122222
+anchor_top = 0.1125
+anchor_right = 0.877778
+anchor_bottom = 0.4
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("AtlasTexture_fvcjy")
+expand_mode = 1
 
 [node name="QuestionContentLabel" type="RichTextLabel" parent="CanvasLayer/QuestionnaireUI"]
 layout_mode = 1
@@ -149,10 +176,10 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -20.0
-offset_top = -140.0
-offset_right = 620.0
-offset_bottom = -56.0
+offset_left = -315.0
+offset_top = -756.0
+offset_right = 325.0
+offset_bottom = -672.0
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_colors/default_color = Color(0, 0, 0, 1)
@@ -172,10 +199,9 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -20.0
-offset_top = -40.0
-offset_right = 620.0
-offset_bottom = 616.0
+offset_left = -315.0
+offset_top = -656.0
+offset_right = 325.0
 grow_horizontal = 2
 grow_vertical = 0
 

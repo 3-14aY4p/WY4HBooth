@@ -56,3 +56,5 @@ theme = SubResource("Theme_hqfip")
 text = "PLACEHOLDER TEXT"
 autowrap_mode = 3
 script = ExtResource("2_0i16n")
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]
