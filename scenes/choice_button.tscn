@@ -1,8 +1,7 @@
-[gd_scene load_steps=10 format=3 uid="uid://bkmjqrgwh0a8i"]
+[gd_scene load_steps=8 format=3 uid="uid://bkmjqrgwh0a8i"]
 
 [ext_resource type="FontFile" uid="uid://dcyn5sfqdlt0r" path="res://assets/fonts/Antonio-Bold.ttf" id="1_u2sgh"]
 [ext_resource type="Script" uid="uid://ciutt3glfo72a" path="res://scripts/choice_button.gd" id="2_0i16n"]
-[ext_resource type="Script" uid="uid://bj3twdugny0h0" path="res://scripts/custom resource/choice_data.gd" id="3_1ioyl"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fvcjy"]
 
@@ -49,15 +48,6 @@ Button/styles/hover = SubResource("StyleBoxFlat_hqfip")
 Button/styles/normal = SubResource("StyleBoxFlat_ptsiu")
 Button/styles/pressed = SubResource("StyleBoxFlat_fvcjy")
 
-[sub_resource type="Resource" id="Resource_1ioyl"]
-script = ExtResource("3_1ioyl")
-choice_txt = ""
-pts_hacker = 0
-pts_hipster = 0
-pts_hustler = 0
-pts_hound = 0
-metadata/_custom_type_script = "uid://bj3twdugny0h0"
-
 [node name="ChoiceButton" type="Button"]
 custom_minimum_size = Vector2(640, 140)
 offset_right = 640.0
@@ -66,6 +56,5 @@ theme = SubResource("Theme_hqfip")
 text = "PLACEHOLDER TEXT"
 autowrap_mode = 3
 script = ExtResource("2_0i16n")
-choice_data = SubResource("Resource_1ioyl")
 
 [connection signal="pressed" from="." to="." method="_on_pressed"]
