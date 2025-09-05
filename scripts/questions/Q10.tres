@@ -1,0 +1,50 @@
+[gd_resource type="Resource" script_class="QuestionData" load_steps=7 format=3 uid="uid://dmuyftwxk31ed"]
+
+[ext_resource type="Script" uid="uid://bj3twdugny0h0" path="res://scripts/custom resource/choice_data.gd" id="1_82f8o"]
+[ext_resource type="Script" uid="uid://dr4ixy1erjnbg" path="res://scripts/custom resource/question_data.gd" id="1_r886p"]
+
+[sub_resource type="Resource" id="Resource_a5abi"]
+script = ExtResource("1_82f8o")
+choice_txt = "You're great at motivating others!"
+pts_hacker = 1
+pts_hipster = 0
+pts_hustler = 2
+pts_hound = 0
+metadata/_custom_type_script = "uid://bj3twdugny0h0"
+
+[sub_resource type="Resource" id="Resource_82f8o"]
+script = ExtResource("1_82f8o")
+choice_txt = "You solve problems brilliantly!"
+pts_hacker = 2
+pts_hipster = 1
+pts_hustler = 0
+pts_hound = 0
+metadata/_custom_type_script = "uid://bj3twdugny0h0"
+
+[sub_resource type="Resource" id="Resource_tf54o"]
+script = ExtResource("1_82f8o")
+choice_txt = "Your ideas are so creative!"
+pts_hacker = 0
+pts_hipster = 2
+pts_hustler = 0
+pts_hound = 1
+metadata/_custom_type_script = "uid://bj3twdugny0h0"
+
+[sub_resource type="Resource" id="Resource_w6jme"]
+script = ExtResource("1_82f8o")
+choice_txt = "You’re incredibly thorough!"
+pts_hacker = 0
+pts_hipster = 0
+pts_hustler = 1
+pts_hound = 2
+metadata/_custom_type_script = "uid://bj3twdugny0h0"
+
+[resource]
+script = ExtResource("1_r886p")
+question_ID = 9
+question_txt = "Compliment that makes you happiest?"
+choice_1 = SubResource("Resource_a5abi")
+choice_2 = SubResource("Resource_82f8o")
+choice_3 = SubResource("Resource_tf54o")
+choice_4 = SubResource("Resource_w6jme")
+metadata/_custom_type_script = "uid://dr4ixy1erjnbg"

@@ -5,34 +5,34 @@
 
 [sub_resource type="Resource" id="Resource_ls8mo"]
 script = ExtResource("1_my2on")
-choice_txt = "The motivator and presenter"
+choice_txt = "Motivator and communicator"
 pts_hacker = 0
-pts_hipster = 1
-pts_hustler = 2
-pts_hound = 0
-metadata/_custom_type_script = "uid://bj3twdugny0h0"
-
-[sub_resource type="Resource" id="Resource_o4i7y"]
-script = ExtResource("1_my2on")
-choice_txt = "The problem solver"
-pts_hacker = 2
 pts_hipster = 0
-pts_hustler = 0
+pts_hustler = 2
 pts_hound = 1
 metadata/_custom_type_script = "uid://bj3twdugny0h0"
 
-[sub_resource type="Resource" id="Resource_8hnyy"]
+[sub_resource type="Resource" id="Resource_my2on"]
 script = ExtResource("1_my2on")
-choice_txt = "The creatives person"
+choice_txt = "Problem solver "
+pts_hacker = 2
+pts_hipster = 1
+pts_hustler = 0
+pts_hound = 0
+metadata/_custom_type_script = "uid://bj3twdugny0h0"
+
+[sub_resource type="Resource" id="Resource_pu6pq"]
+script = ExtResource("1_my2on")
+choice_txt = "Creative thinker"
 pts_hacker = 0
 pts_hipster = 2
 pts_hustler = 1
 pts_hound = 0
 metadata/_custom_type_script = "uid://bj3twdugny0h0"
 
-[sub_resource type="Resource" id="Resource_j32ht"]
+[sub_resource type="Resource" id="Resource_bpum1"]
 script = ExtResource("1_my2on")
-choice_txt = "The researcher and analyst"
+choice_txt = "Researcher and analyst"
 pts_hacker = 1
 pts_hipster = 0
 pts_hustler = 0
@@ -44,7 +44,7 @@ script = ExtResource("2_pu6pq")
 question_ID = 2
 question_txt = "What role do you naturally take in a team?"
 choice_1 = SubResource("Resource_ls8mo")
-choice_2 = SubResource("Resource_o4i7y")
-choice_3 = SubResource("Resource_8hnyy")
-choice_4 = SubResource("Resource_j32ht")
+choice_2 = SubResource("Resource_my2on")
+choice_3 = SubResource("Resource_pu6pq")
+choice_4 = SubResource("Resource_bpum1")
 metadata/_custom_type_script = "uid://dr4ixy1erjnbg"

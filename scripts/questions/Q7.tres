@@ -1,0 +1,50 @@
+[gd_resource type="Resource" script_class="QuestionData" load_steps=7 format=3 uid="uid://b60yfqay6lu67"]
+
+[ext_resource type="Script" uid="uid://dr4ixy1erjnbg" path="res://scripts/custom resource/question_data.gd" id="1_l0vw2"]
+[ext_resource type="Script" uid="uid://bj3twdugny0h0" path="res://scripts/custom resource/choice_data.gd" id="1_t2xfc"]
+
+[sub_resource type="Resource" id="Resource_uqcrt"]
+script = ExtResource("1_t2xfc")
+choice_txt = "By how engaged people are"
+pts_hacker = 1
+pts_hipster = 0
+pts_hustler = 2
+pts_hound = 0
+metadata/_custom_type_script = "uid://bj3twdugny0h0"
+
+[sub_resource type="Resource" id="Resource_t2xfc"]
+script = ExtResource("1_t2xfc")
+choice_txt = "By how well the solution works"
+pts_hacker = 2
+pts_hipster = 1
+pts_hustler = 0
+pts_hound = 0
+metadata/_custom_type_script = "uid://bj3twdugny0h0"
+
+[sub_resource type="Resource" id="Resource_nyvgo"]
+script = ExtResource("1_t2xfc")
+choice_txt = "By creativity and uniqueness"
+pts_hacker = 0
+pts_hipster = 2
+pts_hustler = 0
+pts_hound = 1
+metadata/_custom_type_script = "uid://bj3twdugny0h0"
+
+[sub_resource type="Resource" id="Resource_xvfnb"]
+script = ExtResource("1_t2xfc")
+choice_txt = "By accuracy and completeness"
+pts_hacker = 0
+pts_hipster = 0
+pts_hustler = 1
+pts_hound = 2
+metadata/_custom_type_script = "uid://bj3twdugny0h0"
+
+[resource]
+script = ExtResource("1_l0vw2")
+question_ID = 6
+question_txt = "How do you measure success?"
+choice_1 = SubResource("Resource_uqcrt")
+choice_2 = SubResource("Resource_t2xfc")
+choice_3 = SubResource("Resource_nyvgo")
+choice_4 = SubResource("Resource_xvfnb")
+metadata/_custom_type_script = "uid://dr4ixy1erjnbg"

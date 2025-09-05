@@ -1,10 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://cvk2le8txhk54"]
+[gd_scene load_steps=5 format=3 uid="uid://cvk2le8txhk54"]
 
 [ext_resource type="PackedScene" uid="uid://e3j0wguvh872" path="res://scenes/buttons/exit_button.tscn" id="1_53yik"]
 [ext_resource type="Texture2D" uid="uid://bpwxm0skprokj" path="res://assets/4H_1.png" id="1_awvu7"]
-[ext_resource type="Script" uid="uid://ddcbi38rtg7cd" path="res://scripts/results_page.gd" id="1_tv8he"]
+[ext_resource type="Script" uid="uid://ddcbi38rtg7cd" path="res://scripts/pages/results_page.gd" id="1_tv8he"]
 [ext_resource type="FontFile" uid="uid://dcyn5sfqdlt0r" path="res://assets/fonts/Antonio-Bold.ttf" id="2_q7eq3"]
-[ext_resource type="FontFile" uid="uid://dm0jnx58aq174" path="res://assets/fonts/NotoSans-Regular.ttf" id="3_q7eq3"]
 
 [node name="ResultsPage" type="Control"]
 layout_mode = 3
@@ -26,6 +25,27 @@ grow_vertical = 2
 color = Color(0.921569, 0.921569, 0.921569, 1)
 metadata/_edit_use_anchors_ = true
 
+[node name="HeaderContainer" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HeaderSh" type="ColorRect" parent="CanvasLayer/HeaderContainer"]
+layout_mode = 0
+offset_top = 8.0
+offset_right = 720.0
+offset_bottom = 128.0
+color = Color(1, 0.67451, 0.0117647, 0.313726)
+
+[node name="Header" type="ColorRect" parent="CanvasLayer/HeaderContainer"]
+layout_mode = 0
+offset_right = 720.0
+offset_bottom = 120.0
+color = Color(1, 0.67451, 0.0117647, 1)
+
 [node name="GraphicsContainer" type="Control" parent="CanvasLayer"]
 layout_mode = 3
 anchors_preset = 15
@@ -37,14 +57,14 @@ grow_vertical = 2
 [node name="4HResultImage" type="TextureRect" parent="CanvasLayer/GraphicsContainer"]
 layout_mode = 0
 offset_left = 168.0
-offset_top = 136.0
+offset_top = 216.0
 offset_right = 544.0
-offset_bottom = 512.0
+offset_bottom = 592.0
 texture = ExtResource("1_awvu7")
 expand_mode = 1
 
 [node name="SeparationLine" type="Line2D" parent="CanvasLayer/GraphicsContainer"]
-position = Vector2(26.8471, 32)
+position = Vector2(26.8471, 112)
 scale = Vector2(0.915255, 1)
 points = PackedVector2Array(16, 656, 364, 688, 712, 656)
 width = 6.0
@@ -53,7 +73,7 @@ begin_cap_mode = 2
 end_cap_mode = 2
 
 [node name="SeparationLine2" type="Line2D" parent="CanvasLayer/GraphicsContainer"]
-position = Vector2(83, 66)
+position = Vector2(83, 146)
 scale = Vector2(0.76228, 1)
 points = PackedVector2Array(16, 656, 364, 688, 712, 656)
 width = 6.0
@@ -67,8 +87,8 @@ anchors_preset = -1
 anchor_top = 0.38125
 anchor_right = 1.0
 anchor_bottom = 0.54375
-offset_top = 16.0
-offset_bottom = 16.0
+offset_top = 96.0
+offset_bottom = 96.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/default_color = Color(0, 0, 0, 1)
@@ -83,18 +103,17 @@ metadata/_edit_use_anchors_ = true
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.0888889
-anchor_top = 0.60625
+anchor_top = 0.68125
 anchor_right = 0.911111
-anchor_bottom = 0.9
+anchor_bottom = 0.94375
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/default_color = Color(0.313726, 0.313726, 0.313726, 1)
-theme_override_fonts/normal_font = ExtResource("3_q7eq3")
-theme_override_font_sizes/normal_font_size = 40
+theme_override_fonts/normal_font = ExtResource("2_q7eq3")
+theme_override_font_sizes/normal_font_size = 48
 text = "THE PROBLEM SOLVER. ANALYTICAL AND LOGICAL, YOU LOVE BREAKING CHALLENGES DOWN."
 scroll_active = false
 horizontal_alignment = 1
-vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="NavigationButtonsContainer" type="Control" parent="CanvasLayer"]
@@ -107,10 +126,8 @@ grow_vertical = 2
 
 [node name="ReturnButton" parent="CanvasLayer/NavigationButtonsContainer" instance=ExtResource("1_53yik")]
 layout_mode = 1
-anchor_left = 0.444444
-anchor_top = 0.9
-anchor_right = 0.555556
-anchor_bottom = 0.959375
-text = "🗙"
+anchor_top = 0.01875
+anchor_right = 0.133333
+anchor_bottom = 0.075
 
 [connection signal="pressed" from="CanvasLayer/NavigationButtonsContainer/ReturnButton" to="." method="_on_return_button_pressed"]

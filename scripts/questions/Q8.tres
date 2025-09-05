@@ -1,0 +1,50 @@
+[gd_resource type="Resource" script_class="QuestionData" load_steps=7 format=3 uid="uid://draoxrwwesj1e"]
+
+[ext_resource type="Script" uid="uid://bj3twdugny0h0" path="res://scripts/custom resource/choice_data.gd" id="1_1ae3n"]
+[ext_resource type="Script" uid="uid://dr4ixy1erjnbg" path="res://scripts/custom resource/question_data.gd" id="1_bkyk2"]
+
+[sub_resource type="Resource" id="Resource_lykjk"]
+script = ExtResource("1_1ae3n")
+choice_txt = "Meet and network with others"
+pts_hacker = 0
+pts_hipster = 1
+pts_hustler = 2
+pts_hound = 0
+metadata/_custom_type_script = "uid://bj3twdugny0h0"
+
+[sub_resource type="Resource" id="Resource_1ae3n"]
+script = ExtResource("1_1ae3n")
+choice_txt = "Solve puzzles or code"
+pts_hacker = 2
+pts_hipster = 0
+pts_hustler = 0
+pts_hound = 1
+metadata/_custom_type_script = "uid://bj3twdugny0h0"
+
+[sub_resource type="Resource" id="Resource_xdycm"]
+script = ExtResource("1_1ae3n")
+choice_txt = "create or design"
+pts_hacker = 0
+pts_hipster = 2
+pts_hustler = 1
+pts_hound = 0
+metadata/_custom_type_script = "uid://bj3twdugny0h0"
+
+[sub_resource type="Resource" id="Resource_xfxy5"]
+script = ExtResource("1_1ae3n")
+choice_txt = "Research or read"
+pts_hacker = 1
+pts_hipster = 0
+pts_hustler = 0
+pts_hound = 2
+metadata/_custom_type_script = "uid://bj3twdugny0h0"
+
+[resource]
+script = ExtResource("1_bkyk2")
+question_ID = 7
+question_txt = "What do you usually do on the weekends"
+choice_1 = SubResource("Resource_lykjk")
+choice_2 = SubResource("Resource_1ae3n")
+choice_3 = SubResource("Resource_xdycm")
+choice_4 = SubResource("Resource_xfxy5")
+metadata/_custom_type_script = "uid://dr4ixy1erjnbg"

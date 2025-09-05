@@ -5,34 +5,34 @@
 
 [sub_resource type="Resource" id="Resource_ls8mo"]
 script = ExtResource("1_2ncdn")
-choice_txt = "Pitching the idea"
-pts_hacker = 0
+choice_txt = "Sharing your vision and getting others excited"
+pts_hacker = 1
 pts_hipster = 0
 pts_hustler = 2
-pts_hound = 1
+pts_hound = 0
 metadata/_custom_type_script = "uid://bj3twdugny0h0"
 
-[sub_resource type="Resource" id="Resource_8hnyy"]
+[sub_resource type="Resource" id="Resource_2ncdn"]
 script = ExtResource("1_2ncdn")
-choice_txt = "Building the solution"
+choice_txt = "Figuring out the steps and logistics"
 pts_hacker = 2
 pts_hipster = 0
 pts_hustler = 0
 pts_hound = 1
 metadata/_custom_type_script = "uid://bj3twdugny0h0"
 
-[sub_resource type="Resource" id="Resource_j32ht"]
+[sub_resource type="Resource" id="Resource_35002"]
 script = ExtResource("1_2ncdn")
-choice_txt = "Making it look and feel right"
+choice_txt = "Coming up with fresh ideas and concepts"
 pts_hacker = 0
 pts_hipster = 2
-pts_hustler = 0
-pts_hound = 1
+pts_hustler = 1
+pts_hound = 0
 metadata/_custom_type_script = "uid://bj3twdugny0h0"
 
-[sub_resource type="Resource" id="Resource_r1obi"]
+[sub_resource type="Resource" id="Resource_0fwjd"]
 script = ExtResource("1_2ncdn")
-choice_txt = "Researching and fact-checking"
+choice_txt = "Researching details and gathering info"
 pts_hacker = 1
 pts_hipster = 0
 pts_hustler = 0
@@ -42,9 +42,9 @@ metadata/_custom_type_script = "uid://bj3twdugny0h0"
 [resource]
 script = ExtResource("2_35002")
 question_ID = 0
-question_txt = "What do you enjoy most in a project?"
+question_txt = "When starting a project, what excites you most?"
 choice_1 = SubResource("Resource_ls8mo")
-choice_2 = SubResource("Resource_8hnyy")
-choice_3 = SubResource("Resource_j32ht")
-choice_4 = SubResource("Resource_r1obi")
+choice_2 = SubResource("Resource_2ncdn")
+choice_3 = SubResource("Resource_35002")
+choice_4 = SubResource("Resource_0fwjd")
 metadata/_custom_type_script = "uid://dr4ixy1erjnbg"

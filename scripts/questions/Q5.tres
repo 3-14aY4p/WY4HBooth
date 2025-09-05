@@ -1,0 +1,50 @@
+[gd_resource type="Resource" script_class="QuestionData" load_steps=7 format=3 uid="uid://cckv0qpungi4n"]
+
+[ext_resource type="Script" uid="uid://bj3twdugny0h0" path="res://scripts/custom resource/choice_data.gd" id="1_h0wo3"]
+[ext_resource type="Script" uid="uid://dr4ixy1erjnbg" path="res://scripts/custom resource/question_data.gd" id="1_oplsl"]
+
+[sub_resource type="Resource" id="Resource_fgkhq"]
+script = ExtResource("1_h0wo3")
+choice_txt = "A microphone or platform to present ideas"
+pts_hacker = 0
+pts_hipster = 1
+pts_hustler = 2
+pts_hound = 0
+metadata/_custom_type_script = "uid://bj3twdugny0h0"
+
+[sub_resource type="Resource" id="Resource_frpdf"]
+script = ExtResource("1_h0wo3")
+choice_txt = "Computer or code editor"
+pts_hacker = 2
+pts_hipster = 0
+pts_hustler = 0
+pts_hound = 1
+metadata/_custom_type_script = "uid://bj3twdugny0h0"
+
+[sub_resource type="Resource" id="Resource_suxli"]
+script = ExtResource("1_h0wo3")
+choice_txt = "Sketchpad or creative software"
+pts_hacker = 0
+pts_hipster = 2
+pts_hustler = 1
+pts_hound = 0
+metadata/_custom_type_script = "uid://bj3twdugny0h0"
+
+[sub_resource type="Resource" id="Resource_h0wo3"]
+script = ExtResource("1_h0wo3")
+choice_txt = "Database or research library"
+pts_hacker = 1
+pts_hipster = 0
+pts_hustler = 0
+pts_hound = 2
+metadata/_custom_type_script = "uid://bj3twdugny0h0"
+
+[resource]
+script = ExtResource("1_oplsl")
+question_ID = 4
+question_txt = "If you had a “go-to” tool, which would you choose?"
+choice_1 = SubResource("Resource_fgkhq")
+choice_2 = SubResource("Resource_frpdf")
+choice_3 = SubResource("Resource_suxli")
+choice_4 = SubResource("Resource_h0wo3")
+metadata/_custom_type_script = "uid://dr4ixy1erjnbg"

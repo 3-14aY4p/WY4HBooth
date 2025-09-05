@@ -3,6 +3,8 @@ extends Control
 #was thinking, we store the questions into an array then shuffle them
 #array index serves as page from then on
 @onready var transition: ColorRect = $CanvasLayer/Transition
+@onready var page_number_label: RichTextLabel = $CanvasLayer/QuestionnaireUI/PageNumberLabel
+@onready var progress_bar: ProgressBar = $CanvasLayer/QuestionnaireUI/ProgressBar
 
 @onready var question_content_label: RichTextLabel = $CanvasLayer/QuestionnaireUI/QuestionContentLabel
 @onready var choice_button_1: ChoiceButton = $CanvasLayer/QuestionnaireUI/ChoiceButtonContainer/ChoiceButton
@@ -10,15 +12,16 @@ extends Control
 @onready var choice_button_3: ChoiceButton = $CanvasLayer/QuestionnaireUI/ChoiceButtonContainer/ChoiceButton3
 @onready var choice_button_4: ChoiceButton = $CanvasLayer/QuestionnaireUI/ChoiceButtonContainer/ChoiceButton4
 
-@export var question_data : QuestionData
-@onready var questionnaire_bank : Array[QuestionData] = [
-	load("res://scripts/questions/Q1.tres"),
-	load("res://scripts/questions/Q2.tres"),
-	load("res://scripts/questions/Q3.tres")
-]
+@export var questionnaire_bank : Array[QuestionData] = []
 @onready var choice_bank : Array[ChoiceData] = []
+var question_data : QuestionData
 
 func _ready() -> void:
+	page_number_label.text = "Q" + str(Global.page_number + 1)
+	
+	progress_bar.max_value = len(questionnaire_bank)
+	progress_bar.value = Global.page_number
+	
 	var tween = get_tree().create_tween()
 	tween.tween_property(transition, "color", Color(0, 0, 0, 0), 0.5)
 	tween.connect("finished", on_tween_finished)
