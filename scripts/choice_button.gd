@@ -3,6 +3,9 @@ class_name ChoiceButton extends Button
 @export var choice_data : ChoiceData
 
 
+func _ready() -> void:
+	text = choice_data.choice_txt
+
 func _on_pressed() -> void:
 	Global.total_hacker += choice_data.pts_hacker
 	Global.total_hipster += choice_data.pts_hipster
