@@ -1,11 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://bkmjqrgwh0a8i"]
+[gd_scene load_steps=7 format=3 uid="uid://e3j0wguvh872"]
 
-[ext_resource type="FontFile" uid="uid://dcyn5sfqdlt0r" path="res://assets/fonts/Antonio-Bold.ttf" id="1_u2sgh"]
-[ext_resource type="Script" uid="uid://ciutt3glfo72a" path="res://scripts/choice_button.gd" id="2_0i16n"]
+[ext_resource type="FontFile" uid="uid://dcyn5sfqdlt0r" path="res://assets/fonts/Antonio-Bold.ttf" id="1_iggrr"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fvcjy"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_k6wl8"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hqfip"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dki6o"]
 bg_color = Color(0.960351, 0.960351, 0.960351, 1)
 corner_radius_top_left = 16
 corner_radius_top_right = 16
@@ -16,7 +15,7 @@ shadow_color = Color(0, 0, 0, 0.0980392)
 shadow_size = 1
 shadow_offset = Vector2(0, 4)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ptsiu"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wrs2q"]
 bg_color = Color(1, 1, 1, 1)
 corner_radius_top_left = 16
 corner_radius_top_right = 16
@@ -27,7 +26,7 @@ shadow_color = Color(0, 0, 0, 0.0980392)
 shadow_size = 1
 shadow_offset = Vector2(0, 4)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fvcjy"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_70fhl"]
 bg_color = Color(0.881937, 0.881937, 0.881937, 1)
 corner_radius_top_left = 16
 corner_radius_top_right = 16
@@ -42,19 +41,20 @@ Button/colors/font_hover_color = Color(0.313726, 0.313726, 0.313726, 1)
 Button/colors/font_hover_pressed_color = Color(0.313726, 0.313726, 0.313726, 1)
 Button/colors/font_pressed_color = Color(0.313726, 0.313726, 0.313726, 1)
 Button/font_sizes/font_size = 24
-Button/fonts/font = ExtResource("1_u2sgh")
-Button/styles/focus = SubResource("StyleBoxEmpty_fvcjy")
-Button/styles/hover = SubResource("StyleBoxFlat_hqfip")
-Button/styles/normal = SubResource("StyleBoxFlat_ptsiu")
-Button/styles/pressed = SubResource("StyleBoxFlat_fvcjy")
+Button/fonts/font = ExtResource("1_iggrr")
+Button/styles/focus = SubResource("StyleBoxEmpty_k6wl8")
+Button/styles/hover = SubResource("StyleBoxFlat_dki6o")
+Button/styles/normal = SubResource("StyleBoxFlat_wrs2q")
+Button/styles/pressed = SubResource("StyleBoxFlat_70fhl")
 
-[node name="ChoiceButton" type="Button"]
-custom_minimum_size = Vector2(640, 140)
-offset_right = 640.0
-offset_bottom = 140.0
+[node name="ExitButton" type="Button"]
+custom_minimum_size = Vector2(60, 60)
+anchors_preset = -1
+anchor_left = 0.0333333
+anchor_top = 0.2
+anchor_right = 0.116667
+anchor_bottom = 0.7
 theme = SubResource("Theme_hqfip")
-text = "PLACEHOLDER TEXT"
+text = "↺"
 autowrap_mode = 3
-script = ExtResource("2_0i16n")
-
-[connection signal="pressed" from="." to="." method="_on_pressed"]
+metadata/_edit_use_anchors_ = true

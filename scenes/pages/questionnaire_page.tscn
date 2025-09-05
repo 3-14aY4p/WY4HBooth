@@ -1,10 +1,10 @@
 [gd_scene load_steps=12 format=3 uid="uid://dp6ddqiik45gu"]
 
 [ext_resource type="Script" uid="uid://6butiporigej" path="res://scripts/questionnaire_page.gd" id="1_thmol"]
-[ext_resource type="Resource" uid="uid://daym1j82cy71l" path="res://scripts/questions/Q1.tres" id="2_ls8mo"]
 [ext_resource type="Texture2D" uid="uid://p2b5ilox6r6r" path="res://assets/4H/HIPSTER_crying.PNG" id="2_ytqnx"]
 [ext_resource type="FontFile" uid="uid://dcyn5sfqdlt0r" path="res://assets/fonts/Antonio-Bold.ttf" id="3_ls8mo"]
-[ext_resource type="PackedScene" uid="uid://bkmjqrgwh0a8i" path="res://scenes/choice_button.tscn" id="4_o4i7y"]
+[ext_resource type="PackedScene" uid="uid://bkmjqrgwh0a8i" path="res://scenes/buttons/choice_button.tscn" id="4_o4i7y"]
+[ext_resource type="PackedScene" uid="uid://e3j0wguvh872" path="res://scenes/buttons/exit_button.tscn" id="5_ytqnx"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fvcjy"]
 atlas = ExtResource("2_ytqnx")
@@ -63,7 +63,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_thmol")
-question_data = ExtResource("2_ls8mo")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -202,18 +201,11 @@ anchor_bottom = 0.09375
 grow_horizontal = 2
 metadata/_edit_use_anchors_ = true
 
-[node name="ExitButton" type="Button" parent="CanvasLayer/NavigationButtonContainer"]
-custom_minimum_size = Vector2(60, 60)
+[node name="ExitButton" parent="CanvasLayer/NavigationButtonContainer" instance=ExtResource("5_ytqnx")]
 layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.0333333
-anchor_top = 0.2
-anchor_right = 0.116667
-anchor_bottom = 0.7
-theme = SubResource("Theme_hqfip")
-text = "↺"
-autowrap_mode = 3
-metadata/_edit_use_anchors_ = true
+anchor_left = 0.0444444
+anchor_right = 0.138889
+anchor_bottom = 0.766667
 
 [node name="PrevButton" type="Button" parent="CanvasLayer/NavigationButtonContainer"]
 visible = false
@@ -257,4 +249,3 @@ color = Color(0, 0, 0, 0)
 [connection signal="pressed" from="CanvasLayer/QuestionnaireUI/ChoiceButtonContainer/ChoiceButton2" to="." method="_on_choice_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/QuestionnaireUI/ChoiceButtonContainer/ChoiceButton3" to="." method="_on_choice_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/QuestionnaireUI/ChoiceButtonContainer/ChoiceButton4" to="." method="_on_choice_button_pressed"]
-[connection signal="pressed" from="CanvasLayer/NavigationButtonContainer/ExitButton" to="." method="_on_exit_button_pressed"]

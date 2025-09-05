@@ -1,0 +1,50 @@
+[gd_resource type="Resource" script_class="QuestionData" load_steps=7 format=3 uid="uid://d243h66vty4no"]
+
+[ext_resource type="Script" uid="uid://bj3twdugny0h0" path="res://scripts/custom resource/choice_data.gd" id="1_my2on"]
+[ext_resource type="Script" uid="uid://dr4ixy1erjnbg" path="res://scripts/custom resource/question_data.gd" id="2_pu6pq"]
+
+[sub_resource type="Resource" id="Resource_ls8mo"]
+script = ExtResource("1_my2on")
+choice_txt = "The motivator and presenter"
+pts_hacker = 0
+pts_hipster = 1
+pts_hustler = 2
+pts_hound = 0
+metadata/_custom_type_script = "uid://bj3twdugny0h0"
+
+[sub_resource type="Resource" id="Resource_o4i7y"]
+script = ExtResource("1_my2on")
+choice_txt = "The problem solver"
+pts_hacker = 2
+pts_hipster = 0
+pts_hustler = 0
+pts_hound = 1
+metadata/_custom_type_script = "uid://bj3twdugny0h0"
+
+[sub_resource type="Resource" id="Resource_8hnyy"]
+script = ExtResource("1_my2on")
+choice_txt = "The creatives person"
+pts_hacker = 0
+pts_hipster = 2
+pts_hustler = 1
+pts_hound = 0
+metadata/_custom_type_script = "uid://bj3twdugny0h0"
+
+[sub_resource type="Resource" id="Resource_j32ht"]
+script = ExtResource("1_my2on")
+choice_txt = "The researcher and analyst"
+pts_hacker = 1
+pts_hipster = 0
+pts_hustler = 0
+pts_hound = 2
+metadata/_custom_type_script = "uid://bj3twdugny0h0"
+
+[resource]
+script = ExtResource("2_pu6pq")
+question_ID = 2
+question_txt = "What role do you naturally take in a team?"
+choice_1 = SubResource("Resource_ls8mo")
+choice_2 = SubResource("Resource_o4i7y")
+choice_3 = SubResource("Resource_8hnyy")
+choice_4 = SubResource("Resource_j32ht")
+metadata/_custom_type_script = "uid://dr4ixy1erjnbg"

@@ -1,0 +1,59 @@
+[gd_scene load_steps=8 format=3 uid="uid://bkmjqrgwh0a8i"]
+
+[ext_resource type="FontFile" uid="uid://dcyn5sfqdlt0r" path="res://assets/fonts/Antonio-Bold.ttf" id="1_u2sgh"]
+[ext_resource type="Script" uid="uid://ciutt3glfo72a" path="res://scripts/choice_button.gd" id="2_0i16n"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fvcjy"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hqfip"]
+bg_color = Color(0.960351, 0.960351, 0.960351, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+corner_detail = 10
+shadow_color = Color(0, 0, 0, 0.0980392)
+shadow_size = 1
+shadow_offset = Vector2(0, 4)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ptsiu"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+corner_detail = 10
+shadow_color = Color(0, 0, 0, 0.0980392)
+shadow_size = 1
+shadow_offset = Vector2(0, 4)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fvcjy"]
+bg_color = Color(0.881937, 0.881937, 0.881937, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+corner_detail = 10
+
+[sub_resource type="Theme" id="Theme_hqfip"]
+Button/colors/font_color = Color(0.314316, 0.314316, 0.314316, 1)
+Button/colors/font_focus_color = Color(0.313726, 0.313726, 0.313726, 1)
+Button/colors/font_hover_color = Color(0.313726, 0.313726, 0.313726, 1)
+Button/colors/font_hover_pressed_color = Color(0.313726, 0.313726, 0.313726, 1)
+Button/colors/font_pressed_color = Color(0.313726, 0.313726, 0.313726, 1)
+Button/font_sizes/font_size = 24
+Button/fonts/font = ExtResource("1_u2sgh")
+Button/styles/focus = SubResource("StyleBoxEmpty_fvcjy")
+Button/styles/hover = SubResource("StyleBoxFlat_hqfip")
+Button/styles/normal = SubResource("StyleBoxFlat_ptsiu")
+Button/styles/pressed = SubResource("StyleBoxFlat_fvcjy")
+
+[node name="ChoiceButton" type="Button"]
+custom_minimum_size = Vector2(640, 140)
+offset_right = 640.0
+offset_bottom = 140.0
+theme = SubResource("Theme_hqfip")
+text = "PLACEHOLDER TEXT"
+script = ExtResource("2_0i16n")
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

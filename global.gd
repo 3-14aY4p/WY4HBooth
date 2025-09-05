@@ -3,7 +3,8 @@ extends Node
 var game_controller : GameController
 
 #current page to track how many questions are left
-var page_number : int
+var new_instance : bool = true
+var page_number : int = 0
 
 #total score for each category
 var total_hacker : int = 0

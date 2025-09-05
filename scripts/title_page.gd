@@ -1,6 +1,6 @@
 extends Control
 
-@onready var navigation_label: RichTextLabel = $CanvasLayer/MenuContainer/NavigationLabel
+@onready var navigation_label: RichTextLabel = $CanvasLayer/GraphicsContainer/NavigationLabel
 @onready var animation_player: AnimationPlayer = $CanvasLayer/AnimationPlayer
 
 

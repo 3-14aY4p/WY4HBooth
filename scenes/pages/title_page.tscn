@@ -227,7 +227,7 @@ script = ExtResource("1_j10jy")
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer"]
-root_node = NodePath("../MenuContainer")
+root_node = NodePath("../GraphicsContainer")
 libraries = {
 &"": SubResource("AnimationLibrary_b33r3")
 }
@@ -250,7 +250,7 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 0)
 
-[node name="MenuContainer" type="Control" parent="CanvasLayer"]
+[node name="GraphicsContainer" type="Control" parent="CanvasLayer"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -259,20 +259,19 @@ grow_horizontal = 2
 grow_vertical = 2
 metadata/_edit_use_anchors_ = true
 
-[node name="TitlePageImage" type="TextureRect" parent="CanvasLayer/MenuContainer"]
+[node name="TitlePageImage" type="TextureRect" parent="CanvasLayer/GraphicsContainer"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.344444
 anchor_top = -0.266406
 anchor_right = 0.655556
 anchor_bottom = 0.258594
-offset_top = 522.02
-offset_bottom = 223.02
+offset_top = 531.787
+offset_bottom = 232.787
 texture = ExtResource("1_qppnp")
 expand_mode = 1
-metadata/_edit_use_anchors_ = true
 
-[node name="SeparationLine" type="Line2D" parent="CanvasLayer/MenuContainer"]
+[node name="SeparationLine" type="Line2D" parent="CanvasLayer/GraphicsContainer"]
 position = Vector2(26.8471, 72)
 scale = Vector2(0.915255, 1)
 points = PackedVector2Array(16, 656, 364, 688, 712, 656)
@@ -281,7 +280,7 @@ default_color = Color(0.12549, 0.235294, 0.564706, 1)
 begin_cap_mode = 2
 end_cap_mode = 2
 
-[node name="SeparationLine2" type="Line2D" parent="CanvasLayer/MenuContainer"]
+[node name="SeparationLine2" type="Line2D" parent="CanvasLayer/GraphicsContainer"]
 position = Vector2(83, 106)
 scale = Vector2(0.76228, 1)
 points = PackedVector2Array(16, 656, 364, 688, 712, 656)
@@ -290,7 +289,7 @@ default_color = Color(1, 0.67451, 0.0117647, 1)
 begin_cap_mode = 2
 end_cap_mode = 2
 
-[node name="TitleLabel" type="RichTextLabel" parent="CanvasLayer/MenuContainer"]
+[node name="TitleLabel" type="RichTextLabel" parent="CanvasLayer/GraphicsContainer"]
 layout_mode = 1
 anchors_preset = -1
 anchor_top = 0.425
@@ -304,9 +303,8 @@ theme_override_font_sizes/normal_font_size = 100
 text = "WHAT'S YOUR 4H?"
 horizontal_alignment = 1
 vertical_alignment = 1
-metadata/_edit_use_anchors_ = true
 
-[node name="NavigationLabel" type="RichTextLabel" parent="CanvasLayer/MenuContainer"]
+[node name="NavigationLabel" type="RichTextLabel" parent="CanvasLayer/GraphicsContainer"]
 layout_mode = 1
 anchors_preset = -1
 anchor_top = 0.714844
@@ -323,11 +321,9 @@ text = "TAP TO CONTINUE"
 scroll_active = false
 horizontal_alignment = 1
 vertical_alignment = 1
-metadata/_edit_use_anchors_ = true
 
-[node name="ContinueButton" type="Button" parent="CanvasLayer/MenuContainer"]
+[node name="ContinueButton" type="Button" parent="CanvasLayer"]
 custom_minimum_size = Vector2(360, 640)
-layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -338,4 +334,4 @@ theme_override_fonts/font = ExtResource("1_vc5yi")
 theme_override_font_sizes/font_size = 54
 flat = true
 
-[connection signal="pressed" from="CanvasLayer/MenuContainer/ContinueButton" to="." method="_on_continue_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/ContinueButton" to="." method="_on_continue_button_pressed"]
