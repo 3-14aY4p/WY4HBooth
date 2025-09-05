@@ -1,13 +1,17 @@
 [gd_scene load_steps=11 format=3 uid="uid://dp6ddqiik45gu"]
 
-[ext_resource type="Texture2D" uid="uid://p2b5ilox6r6r" path="res://assets/placeholder_texture.PNG" id="1_0mdi4"]
-[ext_resource type="Script" uid="uid://6butiporigej" path="res://scripts/questionnaire_page.gd" id="1_k6wl8"]
-[ext_resource type="FontFile" uid="uid://dcyn5sfqdlt0r" path="res://assets/fonts/Antonio-Bold.ttf" id="2_l3dve"]
-[ext_resource type="PackedScene" uid="uid://bkmjqrgwh0a8i" path="res://scenes/choice_button.tscn" id="3_l3dve"]
+[ext_resource type="Script" uid="uid://6butiporigej" path="res://scripts/questionnaire_page.gd" id="1_thmol"]
+[ext_resource type="Texture2D" uid="uid://p2b5ilox6r6r" path="res://assets/4H/HIPSTER_crying.PNG" id="2_ytqnx"]
+[ext_resource type="FontFile" uid="uid://dcyn5sfqdlt0r" path="res://assets/fonts/Antonio-Bold.ttf" id="3_ls8mo"]
+[ext_resource type="PackedScene" uid="uid://bkmjqrgwh0a8i" path="res://scenes/choice_button.tscn" id="4_o4i7y"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fvcjy"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_fvcjy"]
+atlas = ExtResource("2_ytqnx")
+region = Rect2(0, 344, 2048, 1384)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hqfip"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_k6wl8"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dki6o"]
 bg_color = Color(0.960351, 0.960351, 0.960351, 1)
 corner_radius_top_left = 16
 corner_radius_top_right = 16
@@ -18,7 +22,7 @@ shadow_color = Color(0, 0, 0, 0.0980392)
 shadow_size = 1
 shadow_offset = Vector2(0, 4)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ptsiu"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wrs2q"]
 bg_color = Color(1, 1, 1, 1)
 corner_radius_top_left = 16
 corner_radius_top_right = 16
@@ -29,7 +33,7 @@ shadow_color = Color(0, 0, 0, 0.0980392)
 shadow_size = 1
 shadow_offset = Vector2(0, 4)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fvcjy"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_70fhl"]
 bg_color = Color(0.881937, 0.881937, 0.881937, 1)
 corner_radius_top_left = 16
 corner_radius_top_right = 16
@@ -44,15 +48,11 @@ Button/colors/font_hover_color = Color(0.313726, 0.313726, 0.313726, 1)
 Button/colors/font_hover_pressed_color = Color(0.313726, 0.313726, 0.313726, 1)
 Button/colors/font_pressed_color = Color(0.313726, 0.313726, 0.313726, 1)
 Button/font_sizes/font_size = 24
-Button/fonts/font = ExtResource("2_l3dve")
-Button/styles/focus = SubResource("StyleBoxEmpty_fvcjy")
-Button/styles/hover = SubResource("StyleBoxFlat_hqfip")
-Button/styles/normal = SubResource("StyleBoxFlat_ptsiu")
-Button/styles/pressed = SubResource("StyleBoxFlat_fvcjy")
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_fvcjy"]
-atlas = ExtResource("1_0mdi4")
-region = Rect2(0, 344, 2048, 1384)
+Button/fonts/font = ExtResource("3_ls8mo")
+Button/styles/focus = SubResource("StyleBoxEmpty_k6wl8")
+Button/styles/hover = SubResource("StyleBoxFlat_dki6o")
+Button/styles/normal = SubResource("StyleBoxFlat_wrs2q")
+Button/styles/pressed = SubResource("StyleBoxFlat_70fhl")
 
 [node name="QuestionnairePage" type="Control"]
 layout_mode = 3
@@ -61,7 +61,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_k6wl8")
+script = ExtResource("1_thmol")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -72,6 +72,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.921569, 0.921569, 0.921569, 1)
+metadata/_edit_use_anchors_ = true
 
 [node name="HeaderContainer" type="Control" parent="CanvasLayer"]
 layout_mode = 3
@@ -93,60 +94,6 @@ layout_mode = 0
 offset_right = 720.0
 offset_bottom = 120.0
 color = Color(1, 0.67451, 0.0117647, 1)
-
-[node name="NavigationButtonContainer" type="Control" parent="CanvasLayer"]
-layout_mode = 3
-anchor_left = 0.0333333
-anchor_top = 0.01875
-anchor_right = 0.3
-anchor_bottom = 0.08125
-offset_left = 496.0
-offset_right = 496.0
-grow_horizontal = 2
-metadata/_edit_use_anchors_ = true
-
-[node name="ExitButton" type="Button" parent="CanvasLayer/NavigationButtonContainer"]
-custom_minimum_size = Vector2(60, 60)
-layout_mode = 1
-anchors_preset = -1
-anchor_left = -2.5
-anchor_top = 0.0875
-anchor_right = -2.1875
-anchor_bottom = 0.8375
-theme = SubResource("Theme_hqfip")
-text = "🗙"
-autowrap_mode = 3
-metadata/_edit_use_anchors_ = true
-
-[node name="PrevButton" type="Button" parent="CanvasLayer/NavigationButtonContainer"]
-custom_minimum_size = Vector2(60, 60)
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.166667
-anchor_top = 0.0909091
-anchor_right = 0.479167
-anchor_bottom = 0.840909
-offset_bottom = -5.0
-theme = SubResource("Theme_hqfip")
-text = "←
-"
-autowrap_mode = 3
-metadata/_edit_use_anchors_ = true
-
-[node name="NextButton" type="Button" parent="CanvasLayer/NavigationButtonContainer"]
-custom_minimum_size = Vector2(60, 60)
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.541667
-anchor_top = 0.0909091
-anchor_right = 0.854167
-anchor_bottom = 0.840909
-offset_bottom = -5.0
-theme = SubResource("Theme_hqfip")
-text = "→
-"
-autowrap_mode = 3
-metadata/_edit_use_anchors_ = true
 
 [node name="QuestionnaireUI" type="Control" parent="CanvasLayer"]
 layout_mode = 3
@@ -183,7 +130,7 @@ offset_bottom = -672.0
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_colors/default_color = Color(0, 0, 0, 1)
-theme_override_fonts/normal_font = ExtResource("2_l3dve")
+theme_override_fonts/normal_font = ExtResource("3_ls8mo")
 theme_override_font_sizes/normal_font_size = 30
 text = "[ PLACEHOLDER TEXT : PLEASE PUT THE QUESTION HERE ]
 [ PLACEHOLDER TEXT : PLEASE PUT THE QUESTION HERE ]"
@@ -205,20 +152,80 @@ offset_right = 325.0
 grow_horizontal = 2
 grow_vertical = 0
 
-[node name="ChoiceButton" parent="CanvasLayer/QuestionnaireUI/ChoiceButtonContainer" instance=ExtResource("3_l3dve")]
+[node name="ChoiceButton" parent="CanvasLayer/QuestionnaireUI/ChoiceButtonContainer" instance=ExtResource("4_o4i7y")]
 layout_mode = 0
 
-[node name="ChoiceButton2" parent="CanvasLayer/QuestionnaireUI/ChoiceButtonContainer" instance=ExtResource("3_l3dve")]
+[node name="ChoiceButton2" parent="CanvasLayer/QuestionnaireUI/ChoiceButtonContainer" instance=ExtResource("4_o4i7y")]
 layout_mode = 0
 offset_top = 160.0
 offset_bottom = 300.0
 
-[node name="ChoiceButton3" parent="CanvasLayer/QuestionnaireUI/ChoiceButtonContainer" instance=ExtResource("3_l3dve")]
+[node name="ChoiceButton3" parent="CanvasLayer/QuestionnaireUI/ChoiceButtonContainer" instance=ExtResource("4_o4i7y")]
 layout_mode = 0
 offset_top = 320.0
 offset_bottom = 460.0
 
-[node name="ChoiceButton4" parent="CanvasLayer/QuestionnaireUI/ChoiceButtonContainer" instance=ExtResource("3_l3dve")]
+[node name="ChoiceButton4" parent="CanvasLayer/QuestionnaireUI/ChoiceButtonContainer" instance=ExtResource("4_o4i7y")]
 layout_mode = 0
 offset_top = 480.0
 offset_bottom = 620.0
+
+[node name="NavigationButtonContainer" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchor_right = 1.0
+anchor_bottom = 0.09375
+grow_horizontal = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="ExitButton" type="Button" parent="CanvasLayer/NavigationButtonContainer"]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0333333
+anchor_top = 0.2
+anchor_right = 0.116667
+anchor_bottom = 0.7
+theme = SubResource("Theme_hqfip")
+text = "🗙"
+autowrap_mode = 3
+metadata/_edit_use_anchors_ = true
+
+[node name="PrevButton" type="Button" parent="CanvasLayer/NavigationButtonContainer"]
+visible = false
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.777778
+anchor_top = 0.2
+anchor_right = 0.861111
+anchor_bottom = 0.7
+theme = SubResource("Theme_hqfip")
+text = "←
+"
+autowrap_mode = 3
+metadata/_edit_use_anchors_ = true
+
+[node name="NextButton" type="Button" parent="CanvasLayer/NavigationButtonContainer"]
+visible = false
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.877778
+anchor_top = 0.2
+anchor_right = 0.961111
+anchor_bottom = 0.7
+theme = SubResource("Theme_hqfip")
+text = "→
+"
+autowrap_mode = 3
+metadata/_edit_use_anchors_ = true
+
+[node name="Transition" type="ColorRect" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[connection signal="pressed" from="CanvasLayer/NavigationButtonContainer/ExitButton" to="." method="_on_exit_button_pressed"]

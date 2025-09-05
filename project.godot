@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="4HsBoothPrototype"
-run/main_scene="uid://dp6ddqiik45gu"
+run/main_scene="uid://cv215jf6if0sp"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://icon.svg"
 

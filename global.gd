@@ -1,5 +1,7 @@
 extends Node
 
+var game_controller : GameController
+
 #current page to track how many questions are left
 var page_number : int
 
